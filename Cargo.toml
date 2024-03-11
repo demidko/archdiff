@@ -1,8 +1,9 @@
 [package]
-name = "javadiff"
-version = "0.1.0"
+name = "archdiff"
+version = "2024.3.12"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = { version = "4.5.2", features = ["derive"] }

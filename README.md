@@ -5,7 +5,7 @@ analyzing large merge requests. These languages are supported:
 
 * Java
 
-## Install
+## Install archdiff
 
 You need [Rust](https://rustup.rs) installed.
 
@@ -16,5 +16,5 @@ cargo install --git https://github.com/demidko/archdiff
 ## Usage example
 
 ```shell
-archdiff master dev
+archdiff --git git@github.com:myname/myrepo.git --from-branch dev --into-branch main
 ```
