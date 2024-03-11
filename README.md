@@ -4,7 +4,7 @@ The utility calculates the difference of java architecture changes between two g
 
 # Install
 
-You need Rust installed:
+You need [Rust](https://rustup.rs) installed:
 
 ```shell
 cargo install --git https://github.com/demidko/javadiff
