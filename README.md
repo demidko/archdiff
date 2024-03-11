@@ -1,9 +1,7 @@
 # archiff
 
 The utility calculates the difference of _architecture_ changes between two git branches. This is especially useful when
-analyzing large merge requests. 
-
-These languages are supported
+analyzing large merge requests. These languages are supported:
 
 * Java
 
