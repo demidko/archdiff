@@ -12,7 +12,7 @@ cargo install --git https://github.com/demidko/javadiff
 
 ## Usage example
 
-In git repo:
+In target repository:
 
 ```shell
 javadiff master dev
