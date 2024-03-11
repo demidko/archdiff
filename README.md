@@ -15,6 +15,8 @@ cargo install --git https://github.com/demidko/archdiff
 
 ## Usage example
 
+Compare with branch `dev`:
+
 ```shell
-archdiff --git git@github.com:myname/myrepo.git --from-branch dev --into-branch main
+archdiff dev
 ```
