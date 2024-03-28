@@ -4,7 +4,7 @@ class Test {
     // do nothing
   }
 
-  public void testMethod_2() {
+  public void newTestMethod() {
     // do nothing
   }
 }
