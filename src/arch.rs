@@ -1,3 +1,15 @@
+use walkdir::WalkDir;
+
 pub fn read() -> String {
-    todo!()
+    todo!("")
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::arch::read;
+
+    #[test]
+    fn it_works() {
+        read();
+    }
 }
