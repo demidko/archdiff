@@ -18,8 +18,7 @@ impl MyGit {
     pub fn current_branch_name(&self) -> String {
         let repo = &self.repo;
         let head = repo.head().unwrap();
-        let name = head.name().unwrap();
-        let name = name.trim_start_matches("refs/heads/");
+        let name = head.shorthand().unwrap();
         name.to_string()
     }
 
