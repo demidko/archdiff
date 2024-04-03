@@ -1,4 +1,6 @@
+use std::collections::hash_set::Difference;
 use std::fmt::Debug;
+use std::path::Path;
 use std::str;
 
 use git2::{Diff, DiffDelta, DiffFindOptions, DiffHunk, DiffLine, Object, ObjectType, Repository};
@@ -27,6 +29,7 @@ pub fn diff_branches<'a>(repo: &'a Repository, old_branch: &str, new_branch: &st
 
 pub fn print_diff_line(delta: DiffDelta, hunk: Option<DiffHunk>, line: DiffLine) -> bool {
     println!();
+    println!("{:?} {:?}", delta.old_file().path(), delta.new_file().path());
     println!("{:?}", delta.status());
     println!("{:?} {:?}", line.old_lineno(), line.new_lineno());
     println!("{:?}", line.origin_value());
@@ -36,6 +39,11 @@ pub fn print_diff_line(delta: DiffDelta, hunk: Option<DiffHunk>, line: DiffLine)
     true
 }
 
+fn extract_path<'a>(diff_delta: &'a DiffDelta) -> &'a Path {
+    let new_file = diff_delta.new_file().path();
+    let old_file = diff_delta.old_file().path();
+    new_file.or(old_file).unwrap()
+}
 
 fn make_tree_object<'a>(repo: &'a Repository, arg: &str) -> Object<'a> {
     let obj = repo.revparse_single(arg).unwrap();
@@ -52,7 +60,7 @@ mod tests {
     #[test]
     fn it_works() {
         let repo = open_current_repo();
-        let diff = diff_branches(&repo, "main", "test_branch");
+        let diff = diff_branches(&repo,  "test_branch", "main");
         let diff_format = DiffFormat::Patch;
         diff.print(DiffFormat::Patch, print_diff_line).unwrap();
     }
