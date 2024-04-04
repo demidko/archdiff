@@ -1,6 +1,6 @@
 [package]
 name = "archdiff"
-version = "2024.3.12"
+version = "2024.4.4"
 edition = "2021"
 
 [profile.release]
@@ -9,5 +9,4 @@ panic = "abort"
 
 [dependencies]
 git2 = "0.18.3"
-regex = "1.10.4"
-similar = "2.5.0"
+itertools = "0.12.1"
