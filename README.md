@@ -16,5 +16,5 @@ cargo install --git https://github.com/demidko/archdiff
 ## Usage
 
 ```shell
-archdiff old_branch new_branch
+archdiff [old_branch] [new_branch]
 ```
