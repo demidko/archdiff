@@ -14,18 +14,11 @@ fn main() {
     let help = "Usage: archdiff [OLD_BRANCH] [NEW_BRANCH]";
     let old_branch = args().nth(1).expect(help);
     let new_branch = args().nth(2).expect(help);
-    let repo = open_current_repo();
+    let repo = Repository::open(".").unwrap();
     let diff = diff_branches(&repo, &old_branch, &new_branch);
     let mut printer = DiffPrinter::new();
     diff.print(Patch, |d, h, l| print_diff_line(d, h, l, &mut printer)).unwrap();
     printer.flush();
-}
-
-fn open_current_repo() -> Repository {
-    match Repository::open(".") {
-        Ok(repo) => repo,
-        Err(e) => panic!("Failed to open repo: {}", e.message())
-    }
 }
 
 fn diff_branches<'a>(repo: &'a Repository, old_branch: &str, new_branch: &str) -> Diff<'a> {
