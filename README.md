@@ -5,7 +5,7 @@ analyzing large merge requests.
 
 These languages are supported:
 
-![](https://img.shields.io/badge/Java-EA7100?style=for-the-badge&logo=openjdk)
+[![](https://img.shields.io/badge/Java-EA7100?style=for-the-badge&logo=openjdk)](#archdiff)
 
 ## Install
 
