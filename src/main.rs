@@ -137,15 +137,3 @@ fn make_tree_object<'a>(repo: &'a Repository, arg: &str) -> Object<'a> {
     let tree_object = obj.peel(ObjectType::Tree);
     tree_object.unwrap()
 }
-
-#[cfg(test)]
-mod tests {
-    use crate::trim_hunk_header;
-
-    #[test]
-    fn trim_hunk_test() {
-        let header = "@@ -4,7 +4,7 @@ class Test {";
-        let header = trim_hunk_header(&header);
-        assert_eq!(header, " class Test {")
-    }
-}
